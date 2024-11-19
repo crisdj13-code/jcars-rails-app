@@ -14,7 +14,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(post_params)
     if @car.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to @car, notice: 'Car was successfully created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class CarsController < ApplicationController
   def update
     @cae = Car.find(params[:id])
     if @car.update(car)
-      redirect_to @poscart, notice: 'car was successfully updated.'
+      redirect_to @car, notice: 'car was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class CarsController < ApplicationController
   def destroy
     @car = car.find(params[:id])
     @car.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to cars_url, notice: 'Car was successfully destroyed.'
   end
 
   private
