@@ -17,17 +17,28 @@
 
 content: "NOT WORKING";
 color: blue;
-}.new-comment {
-  background-color: lightyellow;
-  border: 1px solid #f0c040;
-  animation: fadeOut 5s ease forwards; /* Fade out over 5 seconds */
 }
 
-@keyframes fadeOut {
-  0% {
-    background-color: lightyellow;
+
+
+
+
+.new-comment::before {
+  content: "NEW";
+  color: green;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.new-comment {
+  animation: fade-out 7s ease-out forwards;
+}
+
+@keyframes fade-out {
+  25% {
+    opacity: 1;
   }
   100% {
-    background-color: transparent;
+    opacity: 0;
   }
 }
