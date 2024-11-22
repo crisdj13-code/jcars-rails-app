@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.failure{
+
+content: "NOT WORKING";
+color: blue;
+}.new-comment {
+  background-color: lightyellow;
+  border: 1px solid #f0c040;
+  animation: fadeOut 5s ease forwards; /* Fade out over 5 seconds */
+}
+
+@keyframes fadeOut {
+  0% {
+    background-color: lightyellow;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
