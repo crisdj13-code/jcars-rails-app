@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_23_182354) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_23_231009) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_182354) do
   create_table "cars", force: :cascade do |t|
     t.string "make"
     t.float "price"
-    t.integer "vin"
+    t.string "vin"
     t.text "description"
     t.integer "year"
     t.date "date_arrived"
@@ -74,6 +74,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_182354) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "car_id"
+    t.index ["car_id"], name: "index_posts_on_car_id"
   end
 
   create_table "toys", force: :cascade do |t|
@@ -101,4 +103,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_182354) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
+  add_foreign_key "posts", "cars"
 end
