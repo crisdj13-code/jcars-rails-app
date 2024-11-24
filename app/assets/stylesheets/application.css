@@ -22,7 +22,14 @@ content: "NOT WORKING";
 color: blue;
 }
 
+.notice{
 
+  color:blue;
+}
+
+.alert{
+  color:blue;
+}
 
 
 
@@ -44,4 +51,239 @@ color: blue;
   100% {
     opacity: 0;
   }
+}
+
+/* Devise form - top right corner */
+.devise-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.devise-form {
+  font-size: 0.9em;
+}
+
+.devise-form .field {
+  margin-bottom: 15px;
+}
+
+.devise-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.devise-form .actions {
+  text-align: center;
+}
+
+.devise-links {
+  color:#007BFF;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* If you want to style the links in the top right corner */
+.devise-links a {
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+
+/* Filter Form - Horizontal layout */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.filter-form .field {
+  margin: 5px 10px;
+}
+
+.filter-form label {
+  font-weight: bold;
+}
+
+.filter-form input[type="text"], .filter-form input[type="number"] {
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* Posts Grid - 4 posts per row */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%; /* Ensure it takes full width */
+  grid-auto-rows: minmax(100px, auto); /* Ensure rows adjust properly */
+  grid-template-rows: auto; /* Automatically adjust row size */
+}
+
+.posts-grid .post-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-grid .post-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Prevent extra space between rows */
+.posts-grid {
+  align-items: stretch; /* Stretch all items to fill the container */
+}
+.posts-grid .post-card {
+  min-height: 200px; /* Set a reasonable min height for the cards */
+}
+/* Use Flexbox instead of Grid */
+.posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.posts-grid .post-card {
+  flex: 1 1 calc(25% - 20px); /* Allow each card to take 25% of the space minus the gap */
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-grid .post-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Button Styling */
+button, .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  opacity: 0.8;
+}
+
+/* Primary Button (Blue) */
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-blue), 10%);
+}
+
+/* Secondary Button (Yellow) */
+.btn-secondary {
+  background-color: var(--primary-yellow);
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: darken(var(--primary-yellow), 10%);
+}
+
+/* Global Styles */
+:root {
+  --primary-blue: #007BFF; /* Blue Color */
+  --primary-yellow: #FFCC00; /* Yellow Color */
+  --background-color: #f8f9fa; /* Light background color */
+}
+
+body.bg-light {
+  background-color: blue;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+  flex-grow: 1;
+}
+
+.logo-image {
+  height: 40px; /* Adjust the height of your logo */
+  width: auto;
+}
+
+/* Devise Links (Login, Logout, etc.) */
+.devise-links {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.devise-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.devise-links a:hover {
+  text-decoration: underline;
+}
+
+/* Additional Styling for Pages */
+.container {
+  padding: 20px;
+}
+
+/* Filters Form */
+.filters-form {
+  margin-bottom: 20px;
+}
+
+.filters-form div {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.filters-form input, .filters-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filters-form label {
+  font-weight: bold;
 }
