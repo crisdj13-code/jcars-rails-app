@@ -180,41 +180,35 @@ color: blue;
   margin: 0 auto;
   padding: 0 20px;
 }
-
-/* Button Styling */
-button, .btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover, .btn:hover {
-  opacity: 0.8;
-}
-
-/* Primary Button (Blue) */
-.btn-primary {
-  background-color: var(--primary-blue);
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: darken(var(--primary-blue), 10%);
-}
-
-/* Secondary Button (Yellow) */
-.btn-secondary {
+/* General button styling for both button_to and link_to */
+.button {
+  display: inline-block;
   background-color: var(--primary-yellow);
-  color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none; /* No underline for links */
+  border: none; /* No default border for buttons */
+  cursor: pointer;
+  text-align: center; /* Align text in the center */
 }
 
-.btn-secondary:hover {
-  background-color: darken(var(--primary-yellow), 10%);
+/* Hover effect: background becomes transparent */
+.button:hover {
+  background-color: transparent;
+  color: blue; /* Text color changes to blue */
+  border: 1px solid blue; /* Optional: add border for visibility */
 }
 
+/* Specific styles for link_to */
+.link-button {
+  text-decoration: none; /* Ensure no underline for link_to buttons */
+}
+
+/* Specific styles for button_to */
+.form-button {
+  border: none; /* Remove default button borders */
+}
 /* Global Styles */
 :root {
   --primary-blue: #007BFF; /* Blue Color */
@@ -223,7 +217,7 @@ button:hover, .btn:hover {
 }
 
 body.bg-light {
-  background-color: blue;
+  background-color: var(--primary-yellow)   ;
   font-family: Arial, sans-serif;
 }
 
@@ -236,7 +230,24 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+/* home button */
+.home-button {
+  position: fixed; /* Makes the button fixed on the screen */
+  top: 10px; /* Distance from the top of the screen */
+  left: 10px; /* Distance from the left of the screen */
+  background-color: var(--primary-yellow); /* Blue background */
+  text-decoration-color: white; /* White text */
+  padding: 10px 15px; /* Add padding for better appearance */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from the link */
+  font-weight: bold; /* Make the text bold */
+}
 
+.home-button:hover {
+  background-color: transparent;
+  color: blue; /* Optionally change text color to maintain visibility */
+  border: 1px solid blue; /* Optional: Add a border to make it visually distinct */
+}
 /* Logo Styles */
 .logo {
   flex-grow: 1;

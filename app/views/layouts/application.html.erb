@@ -22,7 +22,8 @@
   <header>
     
     <div class="logo">
-    <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+
+    <%= link_to "Home", root_path, class: 'home-button' %>
     </div>
     <!-- Display Flash Messages -->
     <% if notice %>
@@ -36,15 +37,15 @@
     <div class="devise-links">
     <% if user_signed_in? %>
       <p >
-        Logged in as <%= current_user.email %> 
-        <%= button_to "Edit Profile", edit_user_registration_path ,class: 'btn btn-primary'  %> 
-        <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+        User <%= current_user.email %> 
+        <%= button_to "Edit Profile", edit_user_registration_path ,class: 'button form-button'  %> 
+        <%= button_to "Sign Out", destroy_user_session_path,class: 'button form-button', method: :delete %>
 
       </p>
     <% else %>
       <p>
-        <%= button_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> 
-        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary' %>
+        <%= button_to "Sign In", new_user_session_path, class: 'button form-button' %> 
+        <%= link_to "Sign up", new_user_registration_path,  class: "button link-button" %>
       </p>
     <% end %>
     </div>
