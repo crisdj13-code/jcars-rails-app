@@ -21,9 +21,9 @@
      
   <header>
     
-    <div class="logo">
+    <div class="button-container">
 
-    <%= link_to "Home", root_path, class: 'home-button' %>
+    <%= link_to "Home", root_path, class: 'home-button button link-button' %>
     </div>
     <!-- Display Flash Messages -->
     <% if notice %>
@@ -36,17 +36,16 @@
     <!-- User Authentication Links -->
     <div class="devise-links">
     <% if user_signed_in? %>
-      <p >
         User <%= current_user.email %> 
-        <%= button_to "Edit Profile", edit_user_registration_path ,class: 'button form-button'  %> 
-        <%= button_to "Sign Out", destroy_user_session_path,class: 'button form-button', method: :delete %>
-
-      </p>
+        <div class= "button-container">
+        <%= button_to "Edit Profile", edit_user_registration_path ,class: 'button link-button'  %> 
+        <%= button_to "Sign Out", destroy_user_session_path,class: 'button link-button', method: :delete %>
+        </div>
     <% else %>
-      <p>
-        <%= button_to "Sign In", new_user_session_path, class: 'button form-button' %> 
+        <div class= "button-container">
+        <%= button_to "Sign In", new_user_session_path, class: 'button link-button' %> 
         <%= link_to "Sign up", new_user_registration_path,  class: "button link-button" %>
-      </p>
+        </div>
     <% end %>
     </div>
   </header>

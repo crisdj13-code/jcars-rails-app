@@ -16,6 +16,9 @@
 
 
 @import "actiontext";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
 .failure{
 
 content: "NOT WORKING";
@@ -31,7 +34,66 @@ color: blue;
   color:blue;
 }
 
+/* Comment Section Styles */
+#comments {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+#comments h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+* Individual Comment Styles */
+.comment {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.comment .author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.comment .timestamp {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.comment .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.comment .actions a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.comment .actions a:hover {
+  text-decoration: underline;
+}
 
 .new-comment::before {
   content: "NEW";
@@ -94,19 +156,24 @@ color: blue;
 /* Filter Form - Horizontal layout */
 .filter-form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  gap: 20px; /* Space between the input fields */
+  justify-content: space-between; /* Distributes the items with space between */
   margin-bottom: 30px;
 }
 
 .filter-form .field {
+  color: blue;
   margin: 5px 10px;
+  flex: 1; /* Ensures each field grows evenly */
+  min-width: 150px; /* Minimum width for each input */
 }
 
 .filter-form label {
   font-weight: bold;
+  font-family: "Lobster", cursive;
 }
+
 
 .filter-form input[type="text"], .filter-form input[type="number"] {
   padding: 8px;
@@ -184,7 +251,7 @@ color: blue;
 .button {
   display: inline-block;
   background-color: var(--primary-yellow);
-  color: white;
+  color: black;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none; /* No underline for links */
@@ -217,13 +284,19 @@ color: blue;
 }
 
 body.bg-light {
-  background-color: var(--primary-yellow)   ;
+  background-image: url('/assets/b2.jpeg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  /*background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
   font-family: Arial, sans-serif;
 }
 
 /* Header Styles */
 header {
-  background-color: var(--primary-blue);
+  background-color: var(--primary-blue); /* Fallback color */
+  background-image: url('/assets/header.jpg'); /* Path to your background image */
+  background-size: cover; /* Makes the image cover the entire header */
+  background-position: center; /* Centers the background image */
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -297,4 +370,109 @@ header {
 
 .filters-form label {
   font-weight: bold;
+}
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+  justify-content: flex-start; /* Align buttons to the left */
+}
+
+.button-container .button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-blue);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button-container .link-button {
+  background-color: transparent;
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.button-container .button:hover,
+.button-container .link-button:hover {
+  background-color: var(--primary-yellow);
+  color: white;
+}
+
+/* Card Container Styles */
+.car-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.car-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.car-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.car-card ul li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.car-card ul li strong {
+  color: #333;
+}
+
+/* Button Styling */
+.car-card .btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.car-card .btn-primary {
+  background-color: #28a745;
+}
+
+.car-card .btn:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+
+.car-card .btn-primary:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .car-card {
+    padding: 15px;
+  }
+
+  .car-card h2 {
+    font-size: 20px;
+  }
+
+  .car-card ul li {
+    font-size: 14px;
+  }
 }
