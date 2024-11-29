@@ -117,12 +117,14 @@ color: blue;
 
 /* Devise form - top right corner */
 .devise-container {
+  color: blue;
   display: flex;
   justify-content: flex-end;
   padding: 20px;
 }
 
 .devise-form {
+  color:#0056b3;
   font-size: 0.9em;
 }
 
@@ -475,4 +477,10 @@ header {
   .car-card ul li {
     font-size: 14px;
   }
+}
+.no-results-message {
+  text-align: center;
+  font-size: 18px;
+  color: blue; /* Red text for emphasis */
+  margin-top: 20px;
 }
