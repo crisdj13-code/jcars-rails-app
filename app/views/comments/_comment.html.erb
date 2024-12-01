@@ -1,0 +1,18 @@
+
+
+<div id="<%= dom_id(comment)%>">
+     <%= comment.content %>
+    <%= time_tag comment.created_at, "data-local": "time-ago" %>
+    
+</div>
+
+<%
+=begin %>
+<% css_class = new_comment ? 'failure' : '' %>
+ style="<%= new_comment ? 'background-color: lightgreen;' : '' %>"
+<div id="<%= dom_id(comment) %>">
+    <p class="<%= new_comment ? 'new-comment' : '' %>" ><%= comment.content %></p>
+    <%= time_tag comment.created_at, "data-local": "time-ago" %>
+</div>
+<%
+=end %>

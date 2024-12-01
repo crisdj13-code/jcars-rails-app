@@ -1,0 +1,2 @@
+<%= turbo_stream.append dom_id(@post, :comments), partial: "comments/comment", locals: { comment: @comment, new_comment: true } %>
+

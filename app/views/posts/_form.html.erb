@@ -1,0 +1,66 @@
+<%= form_with(model: post, local: true, multipart: true) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div>
+    <%= form.label :images, "Add images" %>
+    <%= form.file_field :images, multiple: true, accept: 'image/*' %>
+  </div>
+   
+  <h3>Create a Car</h3>
+  <div>
+    <%= form.fields_for :car do |car_form| %>
+      <div>
+        <%= car_form.label :make %>
+        <%= car_form.text_field :make %>
+      </div>
+      <div>
+        <%= car_form.label :price %>
+        <%= car_form.number_field :price %>
+      </div>
+      <div>
+        <%= car_form.label :vin %>
+        <%= car_form.text_field :vin %>
+      </div>
+      <div>
+        <%= car_form.label :description %>
+        <%= car_form.text_area :description %>
+      </div>
+      <div>
+        <%= car_form.label :year %>
+        <%= car_form.number_field :year %>
+      </div>
+      <div>
+        <%= car_form.label :date_arrived %>
+        <%= car_form.date_field :date_arrived %>
+      </div>
+      <div>
+        <%= car_form.label :date_sold %>
+        <%= car_form.date_field :date_sold %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,58 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+
+<%# Add buttons to the top of the page %>
+<div class="filters-form">
+<%= form_with(url: posts_path, method: :get, local: true, html: {class: "filter-form"}) do %>
+  <!-- Post Title Filter -->
+
+  <!-- Car Make Filter -->
+  <div class= "field">
+    <%= label_tag :make, "Make" %>
+    <%= text_field_tag :make, params[:make] %>
+  </div>
+
+  <!-- Car Price Filter -->
+  <div class= "field">
+    <%= label_tag :max_price, "Max Price" %>
+    <%= number_field_tag :price, value: params[:max_price], step: "any" %>
+  </div>
+
+  <!-- Car VIN Filter -->
+  <div class= "field">
+    <%= label_tag :vin, "VIN" %>
+    <%= text_field_tag :vin, params[:vin] %>
+  </div>
+
+  <div class= "button-container">
+    <%= submit_tag "Filter Posts", class: "button link-button"%>
+   <%= link_to 'Reset Filters', posts_path, class: 'button link-button' %>
+  </div>
+<% end %>
+</div>
+<% if current_user&.admin? %>
+  <div class= "button-container">
+  <%= link_to 'Create New Post', new_post_path, class: 'button link-button' %>
+  </div>
+<% end%>
+<div class="container">
+<div class= "posts-grid">
+  <% if @posts.any?%>
+  <% @posts.each do |post| %>
+    <div class = "post-card">
+    <%= render post %>
+    <p>Price: $<%= post.car.price %></p>
+      <div class= "button-container">
+      
+      <%= link_to "View Details", post, class: "button link-button" %>
+      </div>
+    </p>
+    </div>
+  <% end %>
+  <%else %>
+      <p class="no-results-message">There are no cars available
+    <% end%>
+</div>
+</div>

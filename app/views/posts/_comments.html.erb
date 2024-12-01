@@ -1,0 +1,7 @@
+
+<div id= "comments">
+    <% # Expands to render partial: "comments/comment", collection: post.comments %>
+    <%= render partial: "comments/comment", collection: post.comments, as: :comment, locals: { new_comment: false } %>
+
+</div>
+<%= render "comments/new", post: post%>

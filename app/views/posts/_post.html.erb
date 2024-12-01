@@ -1,0 +1,31 @@
+<div id="<%= dom_id post %>">
+  <p>
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+  <p>
+    Posted <%= time_tag post.created_at, "data-local": "time-ago"%>
+  </p>
+  <div>
+    <% if post.images.attached? %>
+    <div class="post-images">
+      <% post.images.each do |image| %>
+        <%= image_tag(image, class: "post-image", alt: "Post image") %>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+  <p>
+    <strong>Content:</strong>
+    <%= filter_plain_text_with_attachments(post.content.body.to_plain_text)%>
+  </p>
+  <% if post.content && post.content.body && post.content.body.attachments.any? %>
+  <div class="attachments">
+    <% post.content.body.attachments.each do |attachment| %>
+      <%= image_tag rails_blob_path(attachment, only_path: true), class: "attachment-image" %>
+    <% end %>
+  </div>
+<% end %>
+  <p><strong> <%= pluralize post.comments.count, "comment" %></strong></p>
+
+</div>
