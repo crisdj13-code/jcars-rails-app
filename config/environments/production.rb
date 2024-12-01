@@ -78,17 +78,18 @@ Rails.application.configure do
   # caching is enabled.
   config.action_mailer.perform_caching = false
     # Set host for Devise to generate full URLs for emails (e.g., confirmation emails).
-  config.action_mailer.default_url_options = { host: "https://jcars-app-6172e40e2a9b.herokuapp.com/" }
+  config.action_mailer.default_url_options = { host: ENV['HOST'] }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # 
   # # Configure SendGrid for ActionMailer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
-    port: 587,
-    domain: 'heroku.com',
-    user_name: 'apikey',
-    password: ENV['SENDGRID_API_KEY'],
+    address: ENV['SMTP_ADDRESS'],  # smtp.sendgrid.net
+    port: ENV['SMTP_PORT'],  # 587
+    domain: 'heroku.com',  #heroku.com 
+    user_name: ENV['SMTP_USERNAME'],  # 'apikey'
+    password: ENV['SMTP_PASSWORD'],  # Your SendGrid API key
     authentication: 'plain',
     enable_starttls_auto: true
   }
