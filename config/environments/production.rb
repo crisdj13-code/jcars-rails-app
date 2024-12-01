@@ -77,7 +77,7 @@ Rails.application.configure do
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
   config.action_mailer.perform_caching = false
-    # Set host for Devise to generate full URLs for emails (e.g., confirmation emails).
+  # Set host for Devise to generate full URLs for emails (e.g., confirmation emails).
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -89,7 +89,7 @@ Rails.application.configure do
     port: ENV['SMTP_PORT'],  # 587
     domain: 'heroku.com',  #heroku.com 
     user_name: 'apikey',  # 'apikey'
-    password: ENV['SMTP_PASSWORD'],  # Your SendGrid API key
+    password: ENV['SENGRID_API_KEY'],  # Your SendGrid API key
     authentication: 'plain',
     enable_starttls_auto: true
   }
