@@ -39,6 +39,11 @@ gem 'devise'
 
 # SMTP SENGRID
 gem 'sendgrid-ruby'
+
+gem "pg", group: :production # PostgreSQL is commonly used in production
+
+gem "rails_12factor", group: :production # Required for Heroku (optional for other deployment frameworks)
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
