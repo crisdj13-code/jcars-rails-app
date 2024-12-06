@@ -11,4 +11,5 @@ production:
   adapter: redis
   url: <%= ENV['REDIS_URL'] %>
   channel_prefix: jcars-app_production
-  ssl: true
+  ssl_params:
+    verify_mode: OpenSSL::SSL::VERIFY_NONE
