@@ -1,21 +1,19 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
+  <p class="cool-text">
     <%= post.title %>
   </p>
-  <p>
-    Posted <%= time_tag post.created_at, "data-local": "time-ago"%>
-  </p>
+  <p class= "cool-text">
+    Posted <%= time_tag post.created_at, "data-local": "time-ago"%></p>
   <div>
     <% if post.images.attached? %>
     <div class="post-images">
       <% post.images.each do |image| %>
-        <%= image_tag(image, class: "post-image", alt: "Post image") %>
+        <%= image_tag(image, class: "post-show-image", alt: "Post image") %>
       <% end %>
     </div>
   <% end %>
   </div>
-  <p>
+  <p class= "cool-text">
     <strong>Content:</strong>
     <%= filter_plain_text_with_attachments(post.content.body.to_plain_text)%>
   </p>
@@ -26,6 +24,6 @@
     <% end %>
   </div>
 <% end %>
-  <p><strong> <%= pluralize post.comments.count, "comment" %></strong></p>
+  <p class= "cool-text"> <%= pluralize post.comments.count, "comment" %></p>
 
 </div>

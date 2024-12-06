@@ -1,22 +1,19 @@
 <% if car.present? %>
-  <div class="car-card">
-    <h2>Car Details</h2>
-    <ul>
-      <li><strong>Make:</strong> <%= car.make %></li>
-      <li><strong>Price:</strong> <%= number_to_currency(car.price) %></li>
-      <li><strong>VIN:</strong> <%= car.vin %></li>
-      <li><strong>Description:</strong> <%= car.description %></li>
-      <li><strong>Year:</strong> <%= car.year %></li>
-      <li><strong>Date Arrived:</strong> <%= car.date_arrived %></li>
+  <div class="cool-text car-card">
+    <h2 >Details</h2>
+    <ul >
+      <li >Make: <%= car.make %></li>
+      <li>Price: <%= number_to_currency(car.price) %></li>
+      <li>VIN: <%= car.vin %></li>
+      <li>Description: <%= car.description %></li>
+      <li>Year: <%= car.year %></li>
+      <li>Date Arrived: <%= car.date_arrived %></li>
       <% if car.date_sold.present? %>
-        <li><strong>Date Sold:</strong> <%= car.date_sold %></li>
+        <li>Date Sold:<%= car.date_sold %></li>
       <% else %>
         <li><strong>Status:</strong> Unsold</li>
       <% end %>
     </ul>
-    <% if current_user&.admin? %>
-      <%= link_to "Edit Car", edit_car_path(@post.car), class: "btn btn-primary" %>
-    <%end %>
   </div>
 <% else %>
   <p>No car is associated with this post.</p>

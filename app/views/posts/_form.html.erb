@@ -1,6 +1,6 @@
 <%= form_with(model: post, local: true, multipart: true) do |form| %>
   <% if post.errors.any? %>
-    <div style="color: red">
+    <div class="alert aler-danger">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
@@ -10,57 +10,53 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class= "mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title , class: "form-control"%>
+  </div>
+  <div class= "mb-3">
+    <%= form.label :content, class: "form-label" %>
+    <%= form.rich_text_area :content ,class: "form-control"%>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.rich_text_area :content %>
+  <div class= "mb-3">
+    <%= form.file_field :images, multiple: true, accept: 'image/*',class: "form-control" %>
   </div>
-
-  <div>
-    <%= form.label :images, "Add images" %>
-    <%= form.file_field :images, multiple: true, accept: 'image/*' %>
-  </div>
-   
-  <h3>Create a Car</h3>
   <div>
     <%= form.fields_for :car do |car_form| %>
-      <div>
-        <%= car_form.label :make %>
-        <%= car_form.text_field :make %>
+      <div class= "mb-3">
+        <%= car_form.label :make, class: "form-label" %>
+        <%= car_form.text_field :make,class: "form-control" %>
       </div>
-      <div>
-        <%= car_form.label :price %>
-        <%= car_form.number_field :price %>
+      <div class= "mb-3">
+        <%= car_form.label :price ,class: "form-label"%>
+        <%= car_form.number_field :price,class: "form-control" %>
       </div>
-      <div>
-        <%= car_form.label :vin %>
-        <%= car_form.text_field :vin %>
+    <div class= "mb-3">
+        <%= car_form.label :vin,class: "form-label" %>
+        <%= car_form.text_field :vin ,class: "form-control"%>
       </div>
-      <div>
-        <%= car_form.label :description %>
-        <%= car_form.text_area :description %>
+     <div class= "mb-3">
+        <%= car_form.label :description,class: "form-label" %>
+        <%= car_form.text_area :description ,class: "form-control"%>
       </div>
-      <div>
-        <%= car_form.label :year %>
-        <%= car_form.number_field :year %>
+      <div class= "mb-3">
+        <%= car_form.label :year,class: "form-label" %>
+        <%= car_form.number_field :year,class: "form-control" %>
       </div>
-      <div>
-        <%= car_form.label :date_arrived %>
-        <%= car_form.date_field :date_arrived %>
+    <div class= "mb-3">
+        <%= car_form.label :date_arrived,class: "form-label" %>
+        <%= car_form.date_field :date_arrived,class: "form-control" %>
       </div>
-      <div>
-        <%= car_form.label :date_sold %>
-        <%= car_form.date_field :date_sold %>
+      <div class= "mb-3">
+        <%= car_form.label :date_sold,class: "form-label" %>
+        <%= car_form.date_field :date_sold,class: "form-control" %>
       </div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.submit %>
+   <div class="d-flex justify-content-between">
+    <%= form.submit "Create Post", class: "btn btn-primary" %>
+    <%= link_to "Cancel", posts_path, class: "btn btn-secondary" %>
   </div>
 <% end %>
