@@ -9,3 +9,5 @@ production:
   url: <%= ENV.fetch("REDIS_URL") 
   
   channel_prefix: jcars-app_production
+  ssl_params:
+  verify_mode: OpenSSL::SSL::VERIFY_NONE
