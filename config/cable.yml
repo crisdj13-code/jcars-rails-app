@@ -12,4 +12,5 @@ production:
   url: redis://:p748cad37d9034da1eb8399f728e1222b11f2a8d9031b922f67d51cfdee52cd83@ec2-54-163-248-46.compute-1.amazonaws.com:24060
   channel_prefix: jcars-app_production
   ssl: true
-  
+  ssl_params:
+     verify_mode: OpenSSL::SSL::VERIFY_NONE
