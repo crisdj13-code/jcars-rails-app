@@ -10,13 +10,13 @@ class PostsController < ApplicationController
     #Post filtering, remember to take out string interpolation from the queries 
     if params[:title].present?
       filter = params[:title]
-      @posts = @posts.where("title LIKE ?", "%#{filter}%")
+      @posts = @posts.where("title ILIKE ?", "%#{filter}%")
     end
 
     # Car filtering
     if params[:make].present?
       filter = params[:make]
-      @posts = @posts.joins(:car).where("cars.make LIKE ?", "%#{filter}%")
+      @posts = @posts.joins(:car).where("cars.make ILIKE ?", "%#{filter}%")
     end
 
     if params[:price].present?
