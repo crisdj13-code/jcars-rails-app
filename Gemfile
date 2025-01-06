@@ -40,6 +40,10 @@ gem "image_processing", "~> 1.2"
 # user authentication gem https://github.com/heartcombo/devise
 gem 'devise'
 
+
+# KAMAL deployment 
+gem 'kamal'
+
 # SMTP SENGRID
 gem 'sendgrid-ruby'
 
