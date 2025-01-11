@@ -5,8 +5,8 @@ In the process of upgrading app to Rails 8 and switching to a different deployme
 * Ruby version 3.2.2
 * Rails 8 (In the process of Upgrading) 
 * System dependencies
-    Devise
-    SendGrid
+    Devise,
+    SendGrid,
     Heroku (Soon switching to Free Platform like Fly.io )
     
 
