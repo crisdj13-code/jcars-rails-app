@@ -11,15 +11,15 @@ In the process of upgrading app to Rails 8 and switching to a different deployme
     
 
 * Configuration
-
+    Will update later on !
 * Database creation
-
+     Will update later on !
 * Database initialization
-
+     Will update later on !
 * How to run the test suite
-
+     Will update later on !
 * Services (job queues, cache servers, search engines, etc.)
-
+     Will update later on !
 * Deployment instructions
-
+     Will update later on !
 * ...
