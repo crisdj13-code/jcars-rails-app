@@ -1,13 +1,14 @@
-# README
+# README Last Update 1/11/25
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In the process of upgrading app to Rails 8 and switching to a different deployment framework instead of Heroku.
 
-Things you may want to cover:
-
-* Ruby version
-
+* Ruby version 3.2.2
+* Rails 8 (In the process of Upgrading) 
 * System dependencies
+    Devise
+    SendGrid
+    Heroku (Soon switching to Free Platform like Fly.io )
+    
 
 * Configuration
 
