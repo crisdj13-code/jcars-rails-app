@@ -27,9 +27,15 @@
   <body class ="bg-light">
      
   <header>
+    
     <div class="button-container">
     <%= link_to "Home", root_path, class: 'home-button button link-button cool-text' %>
     </div>
+     <div class = "maintenance-message" >
+      ****************CURRENTLY TRYING TO <b>UPGRADE TO RAILS 8 </b>and switch <b>Deployment PaaS</b> 
+      & Cloud Storage is <b>NOT</b> set up !!*********
+
+      </div >
     <!-- Display Flash Messages -->
     <% if notice %>
       <p class="notice"><%= notice %></p>
